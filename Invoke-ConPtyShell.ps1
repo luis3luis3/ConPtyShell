@@ -72,7 +72,8 @@ function Invoke-ConPtyShell
     (
         [Parameter(Position = 0)]
         [String]
-        $RemoteIp,
+        $RemoteDNS
+        $RemoteIP = [System.Net.Dns]::GetHostAddresses($RemoteDNS),
         
         [Parameter(Position = 1)]
         [String]
